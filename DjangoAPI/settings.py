@@ -32,7 +32,7 @@ SECRET_KEY = 'i-nx)katbzm&vth6+ks4tj@4-2_)j1bsvyv-b4ohzyzwc^kx-b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','https://alfa-django-api.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','https://alfa-django-api.herokuapp.com/']
 
 
 # Application definition
