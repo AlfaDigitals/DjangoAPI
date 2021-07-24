@@ -23,6 +23,12 @@ from django.views.static import serve
 from django.conf.urls import url
 
 from django.conf import settings
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/favicon.png')
+
+@app.route('/')
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^', include('EmployeeApp.urls')) 
