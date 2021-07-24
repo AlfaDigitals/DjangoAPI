@@ -16,7 +16,7 @@ import os
 import sys
 from pathlib import Path
 
-
+django_heroku.settings(locals())
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -141,4 +141,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-django_heroku.settings(locals())
