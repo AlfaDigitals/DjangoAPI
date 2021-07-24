@@ -34,13 +34,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR,"media")
 SECRET_KEY = 'i-nx)katbzm&vth6+ks4tj@4-2_)j1bsvyv-b4ohzyzwc^kx-b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 if (len(sys.argv) >= 2 and sys.argv[1] == 'runserver'):
-   DEBUG = True
- else:
-   DEBUG = False
+    DEBUG = True
+else:
+    DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','https://alfa-django-api.herokuapp.com/']
+
+ALLOWED_HOSTS = []
 
 
 # Application definition
