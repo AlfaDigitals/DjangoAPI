@@ -11,18 +11,19 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 
-import django_heroku
+
 import os
-import sys
+
 from pathlib import Path
 
-django_heroku.settings(locals())
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
-
+STATIC_ROOT = os.path.join(BASE_DIR,"staticfiles")
+STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,"media")
@@ -34,13 +35,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR,"media")
 SECRET_KEY = 'i-nx)katbzm&vth6+ks4tj@4-2_)j1bsvyv-b4ohzyzwc^kx-b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if (len(sys.argv) >= 2 and sys.argv[1] == 'runserver'):
-    DEBUG = True
-else:
-    DEBUG = False
+DEBUG = False
 
-
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['alfa-digito.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -63,6 +60,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
